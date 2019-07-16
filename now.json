@@ -3,4 +3,5 @@
     { "src": "*.html", "use": "@now/static" },
     { "src": "date.js", "use": "@now/node" }
   ]
+  "alias": ["compartiendo.now.sh"]
 }
