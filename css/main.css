@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+.card {
+	width: 18rem;
+	overflow: hidden;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 2rem;
+}
+
+.card img {
+	max-height: 100%;
+}
+
+
+.badge-Podcast {
+	background-color: #e74c3c;
+	color: white;
+}
+
+.badge-Curso {
+	background-color: #27ae60;
+	color: white;
+}
+
+.badge-Libro {
+	background-color: #2980b9;
+	color: white;
+}
+
+#Container .mix{
+	display: none;
+}
+	
+.container-header {
+	width: 100%;
+	margin: 1rem auto;
+	text-align: center;
+}
