@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Learneability</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$.getJSON('https://api.sheety.co/0ad6846d-14b4-4730-9a46-6bf2ca0eeef7', function(data) {
+		var template = Handlebars.compile($('#item-template').html())
+		$('#Container').html(template(data))
+	})
+})
+</script>
+<script id="item-template" type="text/x-handlebars-template">
+<div class="container">
+	
+	{{#each this}}
+		
+		<div class="card mix category-{{categoríA}}">
+			<img src="{{linkAUnaImagen}}" alt="" class="card-img-top">
+			<div class="card-body">
+				<h5 class="card-title">{{nombreDelRecurso}}</h5>
+				<span class="badge badge-secondary">{{idioma}}</span><span class="badge badge-{{categoríA}}">{{categoríA}}</span>
+				<p class="card-text" id="texto">{{descripcióN}}</p>
+				<a href="{{link}}" target="_blank" class="btn btn-primary">Acceder al {{categoríA}}</a>
+			</div>
+		</div>
+	{{/each}}
+	
+</div>
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="js/jquery.mixitup.min.js"></script>
+<script src="js/wow.min.js"></script>
+
+
+
+</head>
+<body>
+	<div class="container-header">
+	<h1>¿Qué te gustaría descubrir?</h1>
+	<div class="container-filters">
+		<button class="btn badge-Podcast filter" data-filter=".category-Podcast">Podcast</button>
+		<button class="btn badge-Libro filter" data-filter=".category-Libro">Libros</button>
+		<button class="btn badge-Curso filter" data-filter=".category-Curso">Cursos</button>
+		<button class="btn btn-danger filter active" data-filter="all">Todo</button>
+	</div>
+	<div id="Container">Cargando recursos...</div>
+	</div>
+
+	
+
+<!-- 	<div id="Container">
+				<div class="card mix category-Podcast" data-myorder="1">
+			<img src="#" alt="" class="card-img-top">
+		<div class="card-body">
+				<h5 class="card-title">Nombre del Podcast</h5>
+				<p class="badge badge-secondary">Español</p>
+				<p class="card-text" id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In praesentium soluta aliquid corrupti quae animi hic pariatur provident distinctio libero mollitia maiores, voluptas est alias commodi excepturi accusamus! Aut, quia!</p>
+				<a href="#" target="_blank" class="btn btn-primary">Acceder al Podcast</a>
+			</div>
+		</div>
+
+		<div class="card mix category-Curso" data-myorder="1">
+			<img src="#" alt="" class="card-img-top">
+		<div class="card-body">
+				<h5 class="card-title">Nombre del Curso</h5>
+				<p class="badge badge-secondary">Español</p>
+				<p class="card-text" id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In praesentium soluta aliquid corrupti quae animi hic pariatur provident distinctio libero mollitia maiores, voluptas est alias commodi excepturi accusamus! Aut, quia!</p>
+				<a href="#" target="_blank" class="btn btn-primary">Acceder al Podcast</a>
+			</div>
+		</div>
+
+		<div class="card mix category-Libro" data-myorder="1">
+			<img src="#" alt="" class="card-img-top">
+		<div class="card-body">
+				<h5 class="card-title">Nombre del Libro</h5>
+				<p class="badge badge-secondary">Español</p>
+				<p class="card-text" id="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In praesentium soluta aliquid corrupti quae animi hic pariatur provident distinctio libero mollitia maiores, voluptas est alias commodi excepturi accusamus! Aut, quia!</p>
+				<a href="#" target="_blank" class="btn btn-primary">Acceder al Podcast</a>
+			</div>
+		</div>
+	</div> -->
+
+	<script>
+		$(function(){
+		  $('#Container').mixItUp();
+		});
+	</script>
+
+	<link rel="stylesheet" href="css/main.css">
+
+
+</body>
+</html>
